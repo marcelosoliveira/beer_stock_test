@@ -6,3 +6,7 @@
 * Construção de novas funcionalidades e classes de configuração para o cors e banco de dados.
 
 * Feita a refatoração da arquitetura de pacotes, utilizando MVC e recurso.
+
+### Deploy Heroku
+
+Documentação: https://beerstocktest.herokuapp.com/swagger-ui.html
