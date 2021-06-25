@@ -1,7 +1,7 @@
 package one.digitalinnovation.beerstock.mapper;
 
 import one.digitalinnovation.beerstock.dto.BeerDTO;
-import one.digitalinnovation.beerstock.entity.Beer;
+import one.digitalinnovation.beerstock.beer.model.Beer;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

@@ -1,4 +1,4 @@
-package one.digitalinnovation.beerstock.controller;
+package one.digitalinnovation.beerstock.beer.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -30,7 +30,7 @@ public interface BeerControllerDocs {
             @ApiResponse(code = 200, message = "Success beer found in the system"),
             @ApiResponse(code = 404, message = "Beer with given name not found.")
     })
-    BeerDTO findByName(@PathVariable String name) throws BeerNotFoundException;
+    BeerDTO findByName(String name) throws BeerNotFoundException;
 
     @ApiOperation(value = "Returns a list of all beers registered in the system")
     @ApiResponses(value = {
@@ -43,5 +43,21 @@ public interface BeerControllerDocs {
             @ApiResponse(code = 204, message = "Success beer deleted in the system"),
             @ApiResponse(code = 404, message = "Beer with given id not found.")
     })
-    void deleteById(@PathVariable Long id) throws BeerNotFoundException;
+    void deleteById(Long id) throws BeerNotFoundException;
+
+    @ApiOperation(value = "Increment quantity beer")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success increment quantity beer"),
+            @ApiResponse(code = 404, message = "Beer with given id not found.")
+    })
+    BeerDTO increment(Long id, QuantityDTO quantityDTO)
+            throws BeerNotFoundException, BeerStockExceededException;
+
+    @ApiOperation(value = "Decrement quantity beer")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success decrement quantity beer"),
+            @ApiResponse(code = 404, message = "Beer with given id not found.")
+    })
+    BeerDTO decrement(Long id, QuantityDTO quantityDTO)
+            throws BeerNotFoundException, BeerStockExceededException;
 }

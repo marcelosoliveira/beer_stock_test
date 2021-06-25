@@ -1,4 +1,4 @@
-package one.digitalinnovation.beerstock.entity;
+package one.digitalinnovation.beerstock.beer.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
